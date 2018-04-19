@@ -1,2 +1,5 @@
 com\epam\selfstudy\spring\Application.class
+com\epam\selfstudy\spring\web\StackoverflowController.class
+com\epam\selfstudy\spring\model\StackoverflowWebsite.class
+com\epam\selfstudy\spring\service\StackoverflowService.class
 com\epam\selfstudy\spring\HelloController.class
