@@ -1,13 +1,19 @@
 package com.epam.selfstudy.spring.service;
 
 import com.epam.selfstudy.spring.model.StackoverflowWebsite;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import persistence.StackoverflowWebsiteRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class StackoverflowService {
+    @Autowired
+    private StackoverflowWebsiteRepository repository;
+
     private static List<StackoverflowWebsite> items = new ArrayList<>();
 
     static{
@@ -50,7 +56,12 @@ public class StackoverflowService {
                 "(StackExchange)", "для программистов"));
     }
 
+    @PostConstruct
+    public void init(){
+        repository.saveAll(items);
+    }
+
     public List<StackoverflowWebsite> findAll(){
-        return items;
+        return repository.findAll();
     }
 }

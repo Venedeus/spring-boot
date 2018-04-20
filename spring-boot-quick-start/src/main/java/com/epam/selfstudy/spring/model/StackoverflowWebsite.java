@@ -1,6 +1,11 @@
 package com.epam.selfstudy.spring.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class StackoverflowWebsite {
+    @Id
     private final String id;
     private final String website;
     private final String iconImageUrl;
