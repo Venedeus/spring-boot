@@ -1,3 +1,5 @@
 .idea
 .idea/
 target
+spring-boot-quick-start/target
+spring-boot-quick-start/.idea
